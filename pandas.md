@@ -26,10 +26,10 @@
 `len(df)`
 `df['column'].unique()` ### unique values
 `df['column'].nunique()` ### number of uniques
-`len['column'].value_counts()`
+`df.value_counts()`
 
 ### Get DataFrame memory usage
-`df.memory_usage`
+`df.memory_usage()`
 
 
 ## Querying DataFrames
