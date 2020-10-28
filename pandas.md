@@ -127,4 +127,4 @@
 ## Plotting
 
 ### Display a histogram
-df.hist()
+`df.hist()`
