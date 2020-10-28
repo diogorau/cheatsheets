@@ -65,6 +65,10 @@
 ### Get a subset of columns
 `df[['column1', 'column2']]`
 
+### Mapping
+#### Map decimals in a series to $ with two decimal points
+`s.map(lambda x: f'${x:.2}'`
+
 
 ## Sorting and Grouping
 ### Sort by
