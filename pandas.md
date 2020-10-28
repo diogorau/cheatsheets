@@ -65,10 +65,11 @@
 ### Get a subset of columns
 `df[['column1', 'column2']]`
 
-### Mapping
+### Mapping and applying
+#### Mapping works on series, but applying works on dataframes and series
 #### Map decimals in a series to $ with two decimal points
 `s.map(lambda x: f'${x:.2}'`
-
+`df['column'].apply(lambda x: f(x))`
 
 ## Sorting and Grouping
 ### Sort by
@@ -107,6 +108,11 @@
 #### Specify the number of quantiles. Get back the intervals.
 `pd.qcut(df['column'], n)`
 
+#### Cut into 5 bins or into designated bins
+`pd.cut(df['column'], bins = 5)
+`pd.cut(df['column'], bins = [0., 1.5, 3., 10., np.inf], labels = ['S','M','L','XL'])
+
+
 ### Transpose
 `df.T`
 
@@ -116,3 +122,9 @@
 ### Save as CSV or Excel
 `df.to_csv('file.csv')`
 `df.to_excel('file.xlsx')`
+
+
+## Plotting
+
+### Display a histogram
+df.hist()
