@@ -9,11 +9,13 @@
 
 ### Load a DataFrame
 `df = pd.read_csv('filename')`
-
+`df = pd.read_excel('https://github.com/diogorau/foo.xlsx', sheet_name = 'Sheet 2')`
+`df = pd.read_clipboard(sep = '\t')`
 
 ## Summarizing DataFrames
 
 ### Get DataFrame attributes: metadata and statistics
+`df.shape`
 `df.info()`
 `df.describe()`
 
@@ -52,15 +54,17 @@
 `s.idxmax()`
 
 ### Iterate over rows
+#### The latter is supposed to be very fast
 `for idx, row in df.iterrows():`
-`for row in df.itertuples()` ### Supposed to be very fast!
+`for row in df.itertuples()`
 
 ### Query, database style
 `df.query('Column > 100')`
 
-### Get values
-`df.index.tolist()` ### Indices as a list
-`list(df)` ### Column names as alist, same as `df.columns.tolist()`
+### Get indices as a list
+`df.index.tolist()`
+### Get column names as a list, same as `df.columns.tolist()`
+`list(df)`
 
 ### Get a subset of columns
 `df[['column1', 'column2']]`
@@ -68,7 +72,7 @@
 ### Mapping and applying
 #### Mapping works on series, but applying works on dataframes and series
 #### Map decimals in a series to $ with two decimal points
-`s.map(lambda x: f'${x:.2}'`
+`s.map(lambda x: f'${x:.2})'`
 `df['column'].apply(lambda x: f(x))`
 
 ## Sorting and Grouping
@@ -96,6 +100,13 @@
 
 
 ## Changing DataFrame structure
+
+### Make a pivot table of, say populations by country
+#### Besides sum, we could use mean, max, min, among others
+`df.pivot_table(index = 'Country', values = 'Population', aggfunc = 'sum')`
+
+### Merge in everything in a lookup table, like an Excel VLOOKUP
+`pd.merge(df, df_lookup, how = 'left', on = 'column')`
 
 ### Encode labels
 #### The first element is the label value, the second is the label name

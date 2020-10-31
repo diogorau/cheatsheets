@@ -23,3 +23,6 @@
 
 ### Pull (refresh) changes
 `git pull origin main`
+
+### See status
+`git status`
