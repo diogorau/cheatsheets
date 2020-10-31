@@ -22,7 +22,7 @@ a, b, _, (d, *e, f) = t
 `l1[::-1]`
 
 ### Enumerating
-`for i, value in enumarate(l1):`
+`for i, value in enumerate(l1):`
 
 ### Zipping
 `for a, b in zip(l1, l2):`
@@ -37,6 +37,7 @@ a, b, _, (d, *e, f) = t
 
 ### Get value
 `d1.get('foo')`
+`d1.get('soup', 'no soup for you')
 
 ### Remove
 `d1.pop('bar', 'bar not found')`
