@@ -81,7 +81,11 @@ a, b, _, (d, *e, f) = t
 `datetime.datetime.now().isoformat(' ')`
 
 ## Files
-`with open('filename', 'r') as f:
+### r = read, w = write, r+ = read+write, a = append
+### b = binary, t = text
+`with open('filename', 'r+') as f:
+  lines = [l.strip() for l in f]
+  f.writelines(l1)
   file = f.read()`
 
 ## Operating system
