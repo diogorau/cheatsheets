@@ -1,5 +1,9 @@
 # Python cheatsheet
 
+## Debugging
+### Assert
+`assert a > 0, 'a is less than zero but should not be'`
+
 ## Strings
 ### Check if in a string
 `'rau' in 'Diogo Rau'.lower()`
