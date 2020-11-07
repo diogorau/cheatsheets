@@ -26,7 +26,7 @@ a, b, _, (d, *e, f) = t
 `l1[::-1]`
 
 ### Enumerating
-`for i, value in enumarate(l1):`
+`for i, value in enumerate(l1):`
 
 ### Zipping
 `for a, b in zip(l1, l2):`
@@ -41,6 +41,7 @@ a, b, _, (d, *e, f) = t
 
 ### Get value
 `d1.get('foo')`
+`d1.get('soup', 'no soup for you')
 
 ### Remove
 `d1.pop('bar', 'bar not found')`
@@ -84,7 +85,11 @@ a, b, _, (d, *e, f) = t
 `datetime.datetime.now().isoformat(' ')`
 
 ## Files
-`with open('filename', 'r') as f:
+### r = read, w = write, r+ = read+write, a = append
+### b = binary, t = text
+`with open('filename', 'r+') as f:
+  lines = [l.strip() for l in f]
+  f.writelines(l1)
   file = f.read()`
 
 ## Operating system

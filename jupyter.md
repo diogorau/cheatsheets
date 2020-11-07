@@ -32,3 +32,8 @@
 
 ### List the magic functions
 `%magic`
+`%quickref`
+
+### Paste from clipboard
+`%paste`
+`%cpaste`
