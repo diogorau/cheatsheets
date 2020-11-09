@@ -11,6 +11,7 @@
 `df = pd.read_csv('filename')`
 `df = pd.read_excel('https://github.com/diogorau/foo.xlsx', sheet_name = 'Sheet 2')`
 `df = pd.read_clipboard(sep = '\t')`
+`df = pd.read_csv('dictionary', header=0, names=['word', 'count'], sep=' ')`
 
 ## Summarizing DataFrames
 
