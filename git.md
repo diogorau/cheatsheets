@@ -1,28 +1,28 @@
 # Git
 
 ### Configure setup
-`git config`
+    git config
 
 ### Start a repo
-`git init`
+    git init
 
 ### Stage a file
-`git add git.md`
+    git add git.md
 
 ### Commit with a message
-`git commit -m 'initial commit'`
+    git commit -m 'initial commit'
 
 ### Add remote site
-`git remote add origin https://github.com/diogorau/cheatsheets.gif`
+    git remote add origin https://github.com/diogorau/cheatsheets.gif
 
 ### Create main branch
-`git branch -M main`
+    git branch -M main
 
 ### Push changes
-`git push -u origin main`
+    git push -u origin main
 
 ### Pull (refresh) changes
-`git pull origin main`
+    git pull origin main
 
 ### See status
-`git status`
+    git status
