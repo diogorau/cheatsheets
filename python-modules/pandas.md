@@ -37,7 +37,7 @@
 ## Querying DataFrames
 
 ### Get rows 5-7, even if index isn't a number
-    df.iloc[5:7]
+    df.iloc[5:7, :]
 
 ### Get rows where column is foo or bar
     df[df['column'].isin(['foo', 'bar'])]
@@ -68,6 +68,8 @@
 
 ### Get a subset of columns
     df[['column1', 'column2']]
+    df.loc[:, 'letter':'greek']
+    df.loc[:, ['number', 'greek']]
 
 ### Mapping and applying
 #### Mapping works on series, but applying works on dataframes and series
@@ -85,6 +87,9 @@
 
 
 ## Manipulating DataFrame data
+
+### Add a row to the end
+    df.loc[2] = (2, 'c', 'gamma')
 
 ### Turn text into dates
     pd.to_datetime(df['column'])
@@ -120,8 +125,8 @@
     pd.qcut(df['column'], n)
 
 #### Cut into 5 bins or into designated bins
-`pd.cut(df['column'], bins = 5)
-`pd.cut(df['column'], bins = [0., 1.5, 3., 10., np.inf], labels = ['S','M','L','XL'])
+    pd.cut(df['column'], bins = 5)
+    pd.cut(df['column'], bins = [0., 1.5, 3., 10., np.inf], labels = ['S','M','L','XL'])
 
 
 ### Transpose
