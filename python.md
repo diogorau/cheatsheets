@@ -4,10 +4,18 @@
 ### Assert
 `assert a > 0, 'a is less than zero but should not be'`
 
+### Triggering debugger
+#### Then use s to step, n for next, r to return, c to continue, l to list stack
+`breakpoint()`
+
+
 ## Strings
 ### Check if in a string
 `'rau' in 'Diogo Rau'.lower()`
 
+### Partition a string into 3 parts: the text before the matched part,
+### the matched part, and the text after the matched part.
+`'Hello world!'.partition(' ')`
 
 ## Tuples and lists
 
