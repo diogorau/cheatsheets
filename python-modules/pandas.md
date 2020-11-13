@@ -89,7 +89,7 @@
 ## Manipulating DataFrame data
 
 ### Add a row to the end
-    df.loc[2] = (2, 'c', 'gamma')
+    df.loc[len(df)] = (2, 'c', 'gamma')
 
 ### Turn text into dates
     pd.to_datetime(df['column'])

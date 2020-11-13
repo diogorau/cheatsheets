@@ -17,7 +17,21 @@
 ### the matched part, and the text after the matched part.
     'Hello world!'.partition(' ')
 
+### Regular expressions
+    re.sub(r'^`(.*)`.*$', r'    \1', l, flags=re.MULTILINE)
+
 ## Tuples and lists
+
+### Creating
+    t = tuple(['a', 'b'])
+
+### Lengths and counts
+    len((2, 3, 5)) # 3
+    (2, 3, 5, 3, 3, 3).count(3) # 4
+
+### Concatenating and repeating
+    (1, 2, 3) + (4, 5, 6)
+    (1, 2, 3) * 4
 
 ### Slicing
 #### Get every third element
@@ -102,8 +116,9 @@ b = binary, t = text
 
     with open('filename', 'r+') as f:
         lines = [l.strip() for l in f]
-        f.writelines(l1)
-        file = f.read()
+        f.seek(0)
+        f.writelines(lines)
+        file = f.read() # Or read entire file
 
 
 ## Objects
