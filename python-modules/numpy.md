@@ -1,7 +1,7 @@
 # Numpy cheatsheet
 
 ## General
-`np.uniques([1, 3, 2, 3, 1, 2, 3, 5])
+    np.uniques([1, 3, 2, 3, 1, 2, 3, 5])
 
 ## Statistics
 ### Sum rows and columns
