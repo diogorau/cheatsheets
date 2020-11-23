@@ -66,7 +66,7 @@ Generally, a list comprehension is better, but a list comprehension will do all 
     'foo' in d1
 
 ### Get value
-    d1.get('foo')
+    d1.get('foo')  # returns None if no match
     d1.get('soup', 'no soup for you')
 
 ### Remove

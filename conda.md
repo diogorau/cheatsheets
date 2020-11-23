@@ -2,7 +2,7 @@
 
 ## Creating environments
     conda create --name envtest
-    conda create -n envtest --prefix ./envtest # place the environment files in this directory 
+    conda create -n envtest --prefix ./envtest # place the environment files in this directory
 
 ## Installing packages before activating
     conda install -n envtest pip
@@ -25,3 +25,6 @@
 ## Viewing environments and packages
     conda env list
     conda env export -n envtest
+
+## Freeing up space
+    conda clean --all
