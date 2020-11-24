@@ -1,7 +1,7 @@
 #  Docker
 
 ## Search
-### Find an image on dockerhub
+### Find an image on Docker Hub
     docker search diogorau
 
 
@@ -9,6 +9,7 @@
 ### Retrieve an image onto local host
     docker pull ubuntu
     docker pull ubuntu:latest  # Same as above
+    docker pull alpine  # Get a super small Linux image
     
     
 ## List images
@@ -45,10 +46,12 @@
     docker run -it -p 8080:80 ubuntu  # Map port 80 in the container to 80 in the host
     docker run -d -p 8080:80 myserver  # Run detached process, i.e., in the backgruond
 
+
 ## Mounting volumes
 ### Create a named volume for persistance
     docker volume create my-db  # Now your can docker run -v my-db:/local_volume
     docker run -v /Users/diogo/Desktop:/desktop ubuntu  # Mount my desktop inside the container
+    
     
 ### Use a bind mount
     docker volume inspect  # See where tho volume lives
@@ -56,21 +59,26 @@
 
 ## Execute within a container
     docker exec -it foo /bin/bash  # Launch a shell within a running container
+    docker attach foo  # See STDOUT, STDERR, and use STDIN on a running process
+
 
 ## List containers
     docker ps  # All running containers
     docker ps -a  # All containers, including stopped
     docker ps -aq  # All containers, but just the IDs
     
+    
 ## Stop containers
     docker stop foo
     docker stop -t 10 foo  # Wait 10 seconds before killing the container
+
 
 ## Remove containers
     docker rm e6f7  # Using just the start of the container ID
     docker rm foo  # Using the container's name
     docker rm $(docker ps -aq)  # Remove all stopped containers
     docker rm -f foo  # Remove foo, even if it is running, stopping it first
+
 
 ## Remove images
     docker rmi ubuntu
@@ -83,12 +91,16 @@
     docker build -t diogorau/foo .  # Build and tag this
     echo "FROM ubuntu" | docker build -t simple -  # Build from command line, without a Dockerfile
     
+    
 ## Tag
+### Add a tag so you can upload
     docker tag localcopy diogorau/foo:latest
+    
     
 ## Push
     docker push diogorau/foo  # Send the new image to Docker Hub
     
+
 ## Dockerfile
     FROM ubuntu:latest  # Use the most recent version of Ubuntu
     
@@ -112,6 +124,11 @@
     
     # Change current directory to /start/app
     WORKDIR app
+    
+    
+    # Switch to a non-privileged user
+    RUN addgroup -S mygroup && adduser -S myuser -G mygroup
+    USER myuser
     
     # Execute commands; Unlike RUN, these can be overridden when the
     # container is started, e.g., through "docker run -it foo /bin/bash"
