@@ -97,6 +97,10 @@ Generally, a list comprehension is better, but a list comprehension will do all 
 ### Use parens instead of brackets to make a generator instead of a list:
     (x for x in range(1000))
 
+### Create a custom generator
+    def abc():
+        yield 'a'; yield 'b'; yield 'c'
+
 ## Dates and times
 ### Get current time
     datetime.datetime.now()
