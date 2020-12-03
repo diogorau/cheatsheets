@@ -4,7 +4,7 @@
     import logging
     logging.basicConfig(filename = 'out.log', file mode = 'w', format = '%(name)s - %(level name)s - %(message)s')
 
-# Logging levels
+## Logging levels
     logging.debug('Here is the data we received')
     logging.info('We're starting the function. Nothing unusual.')
     logging.warning('Something seems strange, so check it out later.')
