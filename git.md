@@ -13,7 +13,7 @@
     git commit -m 'initial commit'
 
 ### Add remote site
-    git remote add origin https://github.com/diogorau/cheatsheets.gif
+    git remote add origin https://github.com/diogorau/cheatsheets.git
 
 ### Create main branch
     git branch -M main
