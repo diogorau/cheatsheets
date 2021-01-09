@@ -106,6 +106,9 @@
 
 ## Changing DataFrame structure
 
+### Rename columns
+    df.rename(columns = {'old_name': 'new_name'})
+
 ### Make a pivot table of, say populations by country
 #### Besides sum, we could use mean, max, min, among others
     df.pivot_table(index = 'Country', values = 'Population', aggfunc = 'sum')
