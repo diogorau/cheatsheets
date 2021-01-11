@@ -12,6 +12,9 @@
 ### Commit with a message
     git commit -m 'initial commit'
 
+### Discard changes and return to previous commit
+    git restore git.md
+    
 ### Add remote site
     git remote add origin https://github.com/diogorau/cheatsheets.git
 
