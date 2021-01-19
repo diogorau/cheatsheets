@@ -43,6 +43,7 @@
     docker run --rm --name foo ubuntu /bin/echo "Hello world"  # Run "echo"; no need for interactivity
     docker run --rm ubuntu ls -al  # Run commands in the container
     docker run -w /root -it ubuntu  # Start in the /root working directory
+    docker run -h bar -it ubuntu  # Name the container "bar"; this may set the shell prompt too
     docker run -it -p 8080:80 ubuntu  # Map port 80 in the container to 80 in the host
     docker run -d -p 8080:80 myserver  # Run detached process, i.e., in the backgruond
 
